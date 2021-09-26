@@ -16,7 +16,7 @@ The technologies I used to built this app.
 
 - Reactjs
 - JavaScript
-- Nodejs
+- Nodejs (Backend for this repo is [here](https://github.com/harkiratsm/serverforfood) )
 
 ## 🛠️ Installation Steps
 
@@ -97,4 +97,4 @@ Bugs are a part of building a app . Really while solving this bugs I learnt new 
 
 #### What if bug not found on StackOverflow ?
 
-Once , I was stucked in bug but found no solution on stackOverflow that would help me , from a github discussion I found a solution that worked for me and I posted that answer on StackOverflow(https://stackoverflow.com/users/16694762/harkirat-singh?tab=answers) .
+Once , I was stucked in bug but found no solution on stackOverflow that would help me , from a github discussion I found a solution that worked for me and I posted that answer on StackOverflow .
