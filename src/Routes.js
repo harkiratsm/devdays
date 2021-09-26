@@ -14,6 +14,8 @@ import History from './pages/History';
 import MapLayout from './layouts/MapLayout';
 import PreviousOrder from './components/PreviousOrder';
 import CommonLayout from './layouts/CommonLayout';
+import AuthGuard from './components/AuthGaurd';
+import Contactus from './pages/Contactus';
 export default function Routes() {
   return (
     <BrowserRouter>
@@ -58,6 +60,13 @@ export default function Routes() {
               <Menu />
             </MenuLayout>
           </AuthGaurd>
+        </Route>
+        <Route path='/contactus' exact>
+          <AuthGuard>
+            <CommonLayout>
+              <Contactus />
+            </CommonLayout>
+          </AuthGuard>
         </Route>
         <Route path="/menu/checkout" exact>
           <AuthGaurd>

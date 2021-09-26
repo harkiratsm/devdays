@@ -45,8 +45,8 @@ export default function StripeButton() {
   return (
     // ...
     <StripeCheckout
-      name="Three Comma Co." // the pop-in header title
-      description="Big Data Stuff" // the pop-in header subtitle
+      name="Food on Git" // the pop-in header title
+      description="Hungry grab your Phone" // the pop-in header subtitle
       image="https://i.pinimg.com/originals/0b/ef/59/0bef5922f018b08a2b068d8af84c6baa.jpg"
       label="Proceed to Pay"
       allowRememberMe

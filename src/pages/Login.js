@@ -1,23 +1,41 @@
-import React from 'react';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import firebase from '../firebase';
+import React, { useEffect,useContext } from 'react'
+import Sawo from 'sawo'
+import { useHistory } from 'react-router';
+import { LoginContext , PayloadContext} from '../App'
+import '../assets/css/Login.css'
 function Login() {
-  const uiConfig = {
-    // Popup signin flow rather than redirect flow.
-    signInFlow: 'popup',
-    // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
-    signInSuccessUrl: '/',
-    // We will display Google and Facebook as auth providers.
-    signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID]
-  };
-  return (
-    <div>
-      <StyledFirebaseAuth
-        uiConfig={uiConfig}
-        firebaseAuth={firebase.auth()}
-      ></StyledFirebaseAuth>
-    </div>
-  );
+    const history=useHistory();
+    const {setPayload}=useContext(PayloadContext)
+    const {setUser}=useContext(LoginContext)
+    useEffect(() => {
+        var config = {
+            // should be same as the id of the container created on 3rd step
+            containerID: 'sawo-container',
+            // can be one of 'email' or 'phone_number_sms'
+            identifierType: 'phone_number_sms',
+            // Add the API key copied from 5th step
+            apiKey: "bc4f983a-a8d7-4410-80b5-a7fb6875efe9",
+            //bc4f983a-a8d7-4410-80b5-a7fb6875efe9
+            // Add a callback here to handle the payload sent by sdk
+            onSuccess: payload => {
+                // you can use this payload for your purpose
+               setUser(true)
+               localStorage.setItem("auth", JSON.stringify(payload))
+               setPayload(payload)
+               history.push("/")
+            },
+        }
+        let sawo = new Sawo(config)
+        sawo.showForm()
+    }, [setUser,history,setPayload])
+    
+    return (
+        <div className="login">
+            <div>
+                <div id="sawo-container" style={{height: "300px", width: '300px'}}></div>
+            </div>
+        </div>
+    )
 }
 
 export default Login;

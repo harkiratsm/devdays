@@ -55,11 +55,13 @@ npm run start
 5. Material UI
 6. Heroku - Hosting backend
 7. Stripe - Payment
-8. Firebase - Authentication
+8. Sawo - Authentication
 
 ## ⚽ Working
 
 ### App ScreenShot
+
+### Postman Usage
 
 ### Stripe Payment
 
