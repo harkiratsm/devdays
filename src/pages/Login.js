@@ -14,7 +14,8 @@ function Login() {
             // can be one of 'email' or 'phone_number_sms'
             identifierType: 'phone_number_sms',
             // Add the API key copied from 5th step
-            apiKey: "bc4f983a-a8d7-4410-80b5-a7fb6875efe9",
+            apiKey: "74d591cc-9576-43ef-b3a8-d449236ddb9b",
+            // 74d591cc-9576-43ef-b3a8-d449236ddb9b
             //bc4f983a-a8d7-4410-80b5-a7fb6875efe9
             // Add a callback here to handle the payload sent by sdk
             onSuccess: payload => {
